@@ -1,3 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#CEQ
 
->**Character-finder** Is a react app that fetches and displays information about actors/characters.
+>**CEQ** Is a react app that uses the breaking-bad-api to find Characters, Episodes, and Quotes
