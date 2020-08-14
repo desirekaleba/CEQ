@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="main-wrapper">
       <Header/>
       <Characters isLoading={loading} characters={items} />
     </div>
