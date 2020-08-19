@@ -38,6 +38,7 @@ class Character extends Component {
                 <div className='card-img'>
                     <img src={singleCharacter.img} alt={singleCharacter.name} />
                 </div>
+                <h2 className='character-name'>{singleCharacter.name}</h2>
                 <Modal show={show} hideModal={this.hideModal}>
                     <div className="mod">
                         <div className='mod-card-img'>
