@@ -21,3 +21,13 @@
     list-style-type: square;
     text-indent: 1rem;
 }
+
+.mod {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.mod-card-img {
+    width: 100%;
+}
