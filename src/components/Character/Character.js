@@ -1,29 +1,67 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import Modal from './Modal/Modal';
 
 import './Character.css';
 
-const Character = ({ singleCharacter }) => {
-
-    console.log(singleCharacter);
+class Character extends Component {
     
-    return <div className='card'>
+    constructor(props) {
+        super(props);
+
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
+
+        this.state = {
+            show: false
+        };
+    }
+
+    showModal = () => {
+        this.setState({
+            show: true
+        });
+    };
+
+    hideModal = () => {
+        this.setState({
+            show: false
+        });
+    };
+    
+    render() {
+
+        const singleCharacter = this.props.singleCharacter;
+        const  show = this.state.show;
+
+        return <div className='card'>
                 <div className='card-img'>
                     <img src={singleCharacter.img} alt={singleCharacter.name} />
                 </div>
-                <div className='card-info'>
-                    <h2 className="character-name">{singleCharacter.name}</h2>
-                    <p className='character-nickname'><strong>Nickname:</strong> {singleCharacter.nickname}</p>
-                    <p className='character-portrayed'><strong>Portrayed:</strong> {singleCharacter.portrayed}</p>
-                    <p className='character-dob'><strong>DOB:</strong> {singleCharacter.birthday}</p>
-                    <p className='character-status'><strong>Status:</strong> {singleCharacter.status}</p>
-                    <p className='character-occupation'><strong>Occupation:</strong></p>
-                    <ul className='character-occupation-list'>
-                        {
-                            singleCharacter.occupation.map((occ, key) => (<li key={key}>{occ}</li>))
-                        }
-                    </ul>
-                </div>
+                <Modal show={show} hideModal={this.hideModal}>
+                    <div className="mod">
+                        <div className='mod-card-img'>
+                            <img src={singleCharacter.img} alt={singleCharacter.name} width='100%'/>
+                        </div>
+                        <div className='mod-card-info'>
+                            <h2 className='mod-character-name'>{singleCharacter.name}</h2>
+                            <p className='mod-character-nickname'><strong>Nickname:</strong> {singleCharacter.nickname}</p>
+                            <p className='mod-character-portrayed'><strong>Portrayed:</strong> {singleCharacter.portrayed}</p>
+                            <p className='mod-character-dob'><strong>DOB:</strong> {singleCharacter.birthday}</p>
+                            <p className='mod-character-status'><strong>Status:</strong> {singleCharacter.status}</p>
+                            <p className='mod-character-occupation'><strong>Occupation:</strong></p>
+                            <ul className='mod-character-occupation-list'>
+                                {
+                                    singleCharacter.occupation.map((occ, key) => (<li key={key}>{occ}</li>))
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </Modal>
+                <button onClick={this.showModal}>See More</button>
             </div>
+    }
 }
 
 export default Character;
