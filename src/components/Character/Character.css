@@ -1,33 +1,48 @@
 .card {
-    width: 100%;
-    box-shadow: 1px 2px 3px 2px #888888;
-    border: none;
+  width: 100%;
+  box-shadow: 1px 2px 3px 2px #888888;
+  border: none;
 }
 
 .card .card-img {
-    height: 20rem;
-    overflow-y: hidden;
+  height: 15rem;
+  overflow-y: hidden;
 }
 
 .card-img img {
-    width: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card-info {
-    padding: 8px 20px;
+  padding: 8px 20px;
 }
 
 .card-info .character-occupation-list {
-    list-style-type: square;
-    text-indent: 1rem;
+  list-style-type: square;
+  text-indent: 1rem;
 }
 
+.quick-info-info {
+  padding: 12px 15px;
+}
+
+.quick-info-info button {
+  margin: 12px auto;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  padding: 4px 10px;
+  cursor: pointer;
+}
 .mod {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .mod-card-img {
-    width: 100%;
+  width: 100%;
 }
